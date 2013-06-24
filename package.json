@@ -1,16 +1,18 @@
 {
-  "name": "rehypnos",
+  "name": "mintlabs",
   "version": "0.0.0",
-  "description": "Monkeying with canvas",
+  "description": "In which I smoosh buttons.",
   "main": "index.js",
   "dependencies": {
     "raf": "~0.0.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.4.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "",
-  "author": "",
-  "license": "BSD"
+  "author": "Christian Metts xian@mintchaos",
+  "license": "MIT"
 }

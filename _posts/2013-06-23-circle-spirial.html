@@ -1,0 +1,21 @@
+---
+layout: labs
+category: labs
+title: Spirialing circle 1
+tags:
+ - canvas
+---
+
+<canvas id="circlespinner" style="width: 100%; height:100%"></canvas>
+
+<script>
+!function() {
+  var canvas = document.getElementById('circlespinner')
+    , spinner = new labs.SpinningCircle()
+    spinner.init(canvas)
+}()
+</script>
+
+<p>Learning how to canvas. Inspired by <a href="http://lab.hakim.se/hypnos/">http://lab.hakim.se/hypnos/</a> and <a href="http://patakk.tumblr.com/post/33304597365">http://patakk.tumblr.com/post/33304597365</a></p>
+
+<p>Sibling to the <a href="{% post_url 2013-06-23-diamond-spirial %}">diamond</a>.</p>

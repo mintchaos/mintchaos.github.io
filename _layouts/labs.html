@@ -1,0 +1,45 @@
+<!doctype>
+<html>
+<head>
+	<title>{{ page.title }} - mintchaos</title>
+	<script src="//use.edgefonts.net/lato:n3,i3,n4,i4.js"></script>
+	<style>
+	body {
+		font-family: lato, sans-serif;
+		font-size: 16px;
+		color: #555;
+	}
+	h1, h2, h3 {
+		font-weight: 200;
+		color: #888;
+	}
+	.labstitle {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		margin: 0;
+	}
+
+	p {
+		max-width: 35em;
+		font-weight: 500;
+	}
+
+	a:link, a:visited {
+		color: #888;
+		text-decoration: none;
+		border-bottom: 1px dotted #ddd;
+	}
+
+	a:hover {
+		background: #ddd
+	}
+
+	</style>
+	<script src="{{ site.url }}/static/labs.js"></script>
+</head>
+<body>
+	<h1 class="labstitle">{{ page.title}}</h1>
+	{{ content }}
+</body>
+</html>
