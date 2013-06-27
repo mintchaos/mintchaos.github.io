@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>API Driven App Design</title>
+
+		<meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+
+		<link rel="stylesheet" href="lib/zenburn.css">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>API Driven App Design</h1>
+					<h3 class="inverted">An exploration of theory and compromise.</h3>
+					<script>
+						// Delicously hacky. Look away.
+						if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
+					</script>
+				</section>
+
+				<section class="stack">
+					<h2>Hi</h2>
+					<p>
+						I'm Christian. Among many other things, I build internets.
+					</p>
+					<p>
+						Currently at breakingnews.com/NBCNews, <br>formerly of the Django homeland.
+					</p>
+					<p>
+						<i><a href="mailto:xian@mintchaos.com">xian@mintchaos.com</a> • <a href="http://twitter.com/mintchaos">@mintchaos</a></i>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h1>API</h1>
+						<h3 class="inverted">Application Programming Interface</h3>
+						<p><br><br>⇣</p>
+					</section>
+
+					<section>
+						<h1>API</h1>
+						<h3 class="inverted">HTTP RESTful endpoints and structured data</h3>
+					</section>
+
+					<section>
+						<h1>API</h1>
+						<h3 class="inverted">Data</h3>
+						<p>Abstracted.</p>
+						<p>Consistent.</p>
+						<p>Stupid.</p>
+						<p>Structured data.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>API Driven</h1>
+						<p>Do you have an website that has an API?</p>
+						<p><br><br>⇣</p>
+					</section>
+					<section>
+						<h1>API Driven</h1>
+						<p>Do you have an API that powers a website?</p>
+					</section>
+					<section>
+						<h1>API Driven</h1>
+						<p>Do you have an API that powers a website and an iPhone app and a iPad app and a Kindle app and an Android app and a Samsung TV app and etc. ad infinitum?</p>
+					</section>
+					<section>
+						<h1>API Driven</h1>
+						<p>Dogfooding.</p>
+						<p>Can your API support everything about your application?
+						It's not just about the website; Apps all the way down.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Data</h1>
+						<ul>
+						<li>Abstracted.</li> <li>Stupid.</li> <li>Consistent.</li> <li>Structured data.</li>
+						</ul>
+
+						<p><br> <b>Everything</b> is a compromise.</p>
+
+						<p><br><br>⇣</p>
+
+					</section>
+
+					<section>
+						<h1>Data</h1>
+						<h3 class="inverted">Compromise.</h3>
+
+						<p>You can't (easily) load anything lazily. <br>Relationships or methods. HATEOAS.</p>
+						<p>Public. Complexity costs are more upfront. <br>If you put it in, you can't take it out.</p>
+						<p>Private data?</p>
+						<p>Templating.</p>
+					</section>
+				</section>
+
+
+				<section data-state="mychoices">
+					<section>
+						<h1>Decisions I've made</h1>
+						<h3 class="inverted">Let's talk about them</h3>
+
+						<ul>
+							<li>Impure dogfooding.</li>
+							<li>Public views return HTML + json to bootstrap.</li>
+							<li>All writes through the API.</li>
+						</ul>
+
+						<p><br><br>⇣</p>
+					</section>
+
+					<section>
+						<h1>Decisions I've made</h1>
+						<h3 class="inverted">Templating.</h3>
+
+						<p>Wanted to use something light and dumb.
+							A mustache-alike. They're all too dumb.
+						Python AND JS. Ended up using Plate.js</p>
+						<p>More compromise:</p>
+						<ul>
+							<li>Limited template Context.</li>
+							<li>Tags/filters need to be written and tested twice.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-state="alert">
+
+					<section>
+						<h1>Unsolved mysteries</h1>
+						<h3 class="inverted">Complicated views</h3>
+
+						<p>Our popular page:</p>
+						<ul>
+							<li>A list of media.</li>
+							<li>Hot topics. With associated items.</li>
+							<li>Hot items.</li>
+						</ul>
+					</section>
+
+					<section>
+						<h1>Unsolved mysteries</h1>
+						<h3 class="inverted">Complicated views</h3>
+
+						<p>Compromise:</p>
+						<ul>
+							<li>Single endpoint.</li>
+							<li>A bunch of API calls.</li>
+							<li>Magical multi-endpoint.</li>
+							<li>Something else?</li>
+						</ul>
+					</section>
+
+				</section>
+
+				<section>
+					<h1>Resources:</h1>
+					<ul>
+						<li>Tastypie <a href="http://tastypieapi.org/">http://tastypieapi.org/</a></li>
+						<li>Plate (django templates in JS) <a href="https://github.com/chrisdickinson/plate">https://github.com/chrisdickinson/plate</a></li>
+						<li>HATEOAS <a href="http://en.wikipedia.org/wiki/HATEOAS">http://en.wikipedia.org/wiki/HATEOAS</a></li>
+					</ul>
+				</section>
+
+<!--
+				<section data-state="drive">
+					<h2>Get drive.js</h2>
+					<pre><code><large>$ npm install -g drive.js</large></code></pre>
+				</section>
+
+
+				<section data-state="drive">
+					<h2>Tests:</h2>
+					<ul>
+						<li>Have filenames that end with "test.js"</li>
+						<li>Contain exactly one test suite</li>
+						<li>Contain as many tests and asserts as needed</li>
+						<li>Have require.js built in</li>
+					</ul>
+					<pre><code>// example.test.js
+suite("Test suite name", function(require) {
+  // require other modules!
+  var MyApp = require('../myapp')
+
+  test("A failing test", function() {
+    assert.equal(0, 1)
+  })
+})
+</code></pre>
+				</section>
+
+
+				<section data-state="drive">
+					<h2>Tests can:</h2>
+					<ul>
+						<li>Load support libraries via <code>.drive_bundle</code></li>
+						<li>Use HTML documents for DOM testing</li>
+					</ul>
+					<pre><code>// example.test.js
+suite("Test suite name", function(require) {
+
+  test("Use the DOM", function() {
+    assert.equal($('p').length, 1)
+  })
+})
+
+html('./test.html')
+
+
+// test.html
+&lt;html&gt;
+	&lt;head&gt;&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p&gt;A lone paragraph&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+				</section>
+
+
+				<section data-state="drive">
+					<h2>Tests can:</h2>
+					<ul>
+						<li>Mock xhr endpoints to test ajax</li>
+						<li>Test asynchronous code</li>
+					</ul>
+					<pre><code>suite("XHR test", function(require) {
+  test("getJSON", function(<strong>ready</strong>) {
+    $.getJSON('my/custom/endpoint', function(data) {
+      assert.equal(data.content, "hi from server")
+      <strong>ready()</strong>
+    }).error(<strong>ready</strong>)
+  })
+})
+
+endpoints({
+  'my/custom/endpoint': function(req, resp) {
+    resp.writeHead(200, {'Content-Type':'application/json'})
+    resp.end(JSON.stringify({
+      content:'hi from server'
+    }))
+  }
+})
+
+</code></pre>
+				</section>
+-->
+
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+
+		</div>
+
+		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+		<script src="lib/highlight.js"></script>
+		<script src="lib/classList.js"></script>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// Parse the query string into a key/value object
+			var query = {};
+			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+			} );
+
+			// Fires when a slide with data-state=customevent is activated
+			// Reveal.addEventListener( 'customevent', function() {
+			// 	alert( '"customevent" has fired' );
+			// } );
+
+			// Fires each time a new slide is activated
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+			} );
+
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// If true; each slide will be pushed to the browser history
+				history: true,
+
+				// Loops the presentation, defaults to false
+				loop: false,
+
+				// Flags if mouse wheel navigation should be enabled
+				mouseWheel: true,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: false,
+
+				// UI style
+				theme: query.theme || 'neon', // default/neon
+
+				// Transition style
+				transition: query.transition || 'linear' // default/cube/page/concave/linear(2d)
+			});
+
+			hljs.initHighlightingOnLoad();
+		</script>
+
+	</body>
+</html>
