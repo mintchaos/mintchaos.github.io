@@ -1,0 +1,18 @@
+<!doctype>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>{% if page.title %}{{ page.title }}{% else %}labs{% endif %} - mintchaos</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="{{ site.url }}/static/layouts/css/readability.css">
+</head>
+<body>
+	<div class="post-wrapper style-post size-large">
+		<h1>{{ page.title}}</h1>
+		<hr/>
+		{{ content }}
+		<hr>
+		<small class="muted">{{ page.date | date:"%B %d, %Y" }} – Christian Metts @mintchaos</small>
+	</div>
+</body>
+</html>
